@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+</head>
+<body>
+  <h2>Login Form</h2>
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    
+    <input type="submit" value="Login">
+  </form>
+
+  <script>
+    // Define an object to store user data
+    const userData = {};
+
+    // Add an event listener to the form to capture and store user data
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent form submission
+
+      // Get values from the form
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Store the user data in the userData object
+      userData.username = username;
+      userData.password = password;
+
+      // Access the user data outside the function
+      console.log("User data outside the function:", userData);
+    });
+    console.log(userData[0].name)
+  </script>
+</body>
+</html>
